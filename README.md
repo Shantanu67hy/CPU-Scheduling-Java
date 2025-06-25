@@ -75,12 +75,12 @@ The algorithm maintains a queue of processes, where each process is given a burs
 
 - In summary, Feedback is a scheduling algorithm that allocates CPU time based on priority levels, it uses multiple priority queues with different levels of priority, processes with higher priority levels are executed first and when process completes execution, it is moved to the next lower priority queue, it's commonly used in situations where system needs to handle a mix of short and long-running processes, as well as processes with varying priority levels.
 
-7. **Feedback with varying time quantum (FBV)**
+## Feedback with varying time quantum (FBV)
    
 - Same as [Feedback](#Feedback) but with varying time quantum.
 - Feedback with varying time quantum also uses multiple priority queues and assigns a different time quantum for each priority level, it allows the algorithm to be more efficient by spending more time on higher-priority processes and less time on lower-priority processes.
 
-8. ##Aging
+ ## Aging
    
 - Xinu is an operating system developed at Purdue University. The scheduling invariant in Xinu assumes that at any time, the highest priority process eligible for CPU service is executing, with round-robin scheduling for processes of equal priority. Under this scheduling policy, the processes with the highest priority will always be executing. As a result, all the processes with lower priority will never get CPU time. As a result, starvation is produced in Xinu when we have two or more processes eligible for execution that have different priorities. For ease of discussion, we call the set of processes in the ready list and the current process as the eligible processes.
 
@@ -89,6 +89,7 @@ The algorithm maintains a queue of processes, where each process is given a burs
 - Each process has an initial priority that is assigned to it at process creation. Every time the scheduler is called it takes the following steps.
 
   -The priority of the current process is set to the initial priority assigned to it.
+  
   -The priorities of all the ready processes (not the current process) are incremented by 1.
   -The scheduler choses the highest priority process from among all the eligible processes.
 -Note that during each call to the scheduler, the complete ready list has to be traversed
