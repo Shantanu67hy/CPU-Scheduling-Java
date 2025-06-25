@@ -1,3 +1,65 @@
+<u>#CPU-Scheduling-Algorithms</u>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Algorithms
 
 1. **First Come First Serve (FCFS)**
@@ -46,9 +108,11 @@ In summary, Feedback is a scheduling algorithm that allocates CPU time based on 
 
 7. **Feedback with varying time quantum (FBV)**
    
-Same as [Feedback](#Feedback)but with varying time quantum.
+Same as [Feedback](#Feedback) but with varying time quantum.
 Feedback with varying time quantum also uses multiple priority queues and assigns a different time quantum for each priority level, it allows the algorithm to be more efficient by spending more time on higher-priority processes and less time on lower-priority processes.
-Aging
+
+8. ##Aging
+   
 Xinu is an operating system developed at Purdue University. The scheduling invariant in Xinu assumes that at any time, the highest priority process eligible for CPU service is executing, with round-robin scheduling for processes of equal priority. Under this scheduling policy, the processes with the highest priority will always be executing. As a result, all the processes with lower priority will never get CPU time. As a result, starvation is produced in Xinu when we have two or more processes eligible for execution that have different priorities. For ease of discussion, we call the set of processes in the ready list and the current process as the eligible processes.
 
 To overcome starvation, an aging scheduler may be used. On each rescheduling operation, a timeout for instance, the scheduler increases the priority of all the ready processes by a constant number. This avoids starvation as each ready process can be passed over by the scheduler only a finite number of times before it has the highest priority.
